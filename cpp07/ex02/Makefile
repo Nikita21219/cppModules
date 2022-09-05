@@ -1,7 +1,7 @@
-NAME = whatever
+NAME = account
 CC = c++
 
-CPPFLAGS =  -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJDIR = ./objs
 VPATH = .
@@ -15,7 +15,7 @@ all:	$(NAME)
 $(OBJDIR)/%.o :	%.cpp $^
 	@$(CC) $(CPPFLAGS) -c $< -o $@
 
-$(NAME):	Makefile $(OBJDIR) $(OBJ) 
+$(NAME):	Makefile $(OBJDIR) $(OBJ) Account.tpp
 	@$(CC) $(CPPFLAGS) -o $(NAME) $(OBJ) 
 	@echo "$(NAME) compile"
 

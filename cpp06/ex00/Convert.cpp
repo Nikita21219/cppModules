@@ -4,7 +4,7 @@ Convert::Convert(char *str) {setFloatView(str);}
 
 Convert::~Convert() {}
 
-float Convert::getFloatView() const {return floatView;}
+double Convert::getFloatView() const {return floatView;}
 
 void Convert::setFloatView(char *str) {
     try {
@@ -61,7 +61,7 @@ void Convert::printChar() {
 void Convert::printInt() {
     int res = static_cast<int>(floatView);
     std::cout << "int: ";
-    if (isnan(floatView))
+    if (std::isnan(floatView))
         std::cout << "impossible" << std::endl;
     else if (floatView > INT_MAX || floatView < INT_MIN)
         std::cout << "impossible" << std::endl;

@@ -3,19 +3,19 @@
 
 class Convert {
 private:
-    float floatView;
+    double floatView;
 
 public:
     Convert(char *str);
     ~Convert();
-    float getFloatView() const;
+    double getFloatView() const;
     void setFloatView(char *str);
     void printValues();
     void printFloat();
     void printDouble();
     void printChar();
     void printInt();
-    
+
     template<typename T>
     void printDotZeroIfNeed(T num);
 };

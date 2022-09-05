@@ -1,7 +1,7 @@
 NAME = whatever
 CC = c++
 
-CPPFLAGS =  -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 OBJDIR = ./objs
 VPATH = .

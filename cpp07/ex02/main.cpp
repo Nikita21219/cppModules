@@ -5,10 +5,12 @@ int main() {
     unsigned int length = 10;
     Account<int> account1(length);
     Account<int> account2(account1);
+    Account<int> accountEmpty;
 
     // Display size arrays
     std::cout << "accout1 length = " << account1.size() << std::endl;
     std::cout << "accout2 length = " << account2.size() << std::endl;
+    std::cout << "accout2 length = " << accountEmpty.size() << std::endl;
 
     // Fill arrays
     int idx = 0;
@@ -38,6 +40,13 @@ int main() {
     // Index is bigger than size
     try {
         std::cout << account1[100] << std::endl;
+    } catch(const std::exception& e) {
+        std::cout << e.what() << std::endl;
+    }
+    
+    // Index in empty array
+    try {
+        std::cout << accountEmpty[1] << std::endl;
     } catch(const std::exception& e) {
         std::cout << e.what() << std::endl;
     }

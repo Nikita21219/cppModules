@@ -1,68 +1,171 @@
-#include "iter.h"
-
-
-
-// class Awesome {
-// public:
-//     Awesome( void ) : _n( 42 ) { return; }
-//     int get( void ) const { return this->_n; }
-// private:
-//     int _n;
-// };
-
-// std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.get(); return o; }
-
-// template<typename T >
-// void print(T const & x) { std::cout << x <<std:: endl; return; }
-
-// int main() {
-//     int tab[] = { 0, 1, 2, 3, 4 }; //<--- I never understood why you can't write int[] tab. Wouldn't that make more sense?
-//     Awesome tab2[5];
-//     iter(tab, 5, print_el);
-//     iter(tab2, 5, print_el);
-//     return 0;
-// }
-
-
-
-
-
+#include "span.h"
 
 int main() {
+    // Subject tests
     {
-        std::cout << "Int:" << std::endl;
-        const int length = 4;
-        int arr[length] = {1, 2, 3, 42};
-        iter(arr, length, print_el);
-        std::cout << std::endl;
+        // Span sp = Span(5);
+        // sp.addNumber(6);
+        // sp.addNumber(3);
+        // sp.addNumber(17);
+        // sp.addNumber(9);
+        // sp.addNumber(11);
+        // std::cout << sp.shortestSpan() << std::endl;
+        // std::cout << sp.longestSpan() << std::endl;
     }
-    {
-        std::cout << "Double:" << std::endl;
-        const int length = 4;
-        double arr[length] = {1.0, 2.0, 3.0, 4.2};
-        iter(arr, length, print_el);
-        std::cout << std::endl;
-    }
-    {
-        std::cout << "Float:" << std::endl;
-        const int length = 4;
-        float arr[length] = {1.0f, 2.0f, 3.0f, 4.2f};
-        iter(arr, length, print_el);
-        std::cout << std::endl;
-    }
-    {
-        std::cout << "Bool:" << std::endl;
-        const int length = 4;
-        bool arr[length] = {true, true, true, false};
-        iter(arr, length, print_el);
-        std::cout << std::endl;
-    }
-    {
-        std::cout << "String:" << std::endl;
-        const int length = 2;
-        std::string arr[length] = {"Hello", "world"};
-        iter(arr, length, print_el);
-        std::cout << std::endl;
-    }
+
+
+    // {
+    //     Span sp = Span(5);
+    //     int size = 5;
+
+    //     // Try to add over than size elenents
+    //     for (int i = 0; i < size; i++) {
+    //         try {
+    //             sp.addNumber(i);
+    //         } catch(const std::exception& e) {
+    //             std::cout << e.what() << std::endl;
+    //         }
+    //     }
+    // }
+
+
+    // {
+    //     // Test shortestSpan when only 1 element
+    //     Span sp = Span(1);
+    //     sp.addNumber(5);
+    //     try {
+    //         sp.shortestSpan();
+    //     } catch(const std::exception& e) {
+    //         std::cout << e.what() << std::endl;
+    //     }
+        
+    //     // Test longestSpan when only 1 element
+    //     Span sp = Span(1);
+    //     sp.addNumber(5);
+    //     try {
+    //         sp.longestSpan();
+    //     } catch(const std::exception& e) {
+    //         std::cout << e.what() << std::endl;
+    //     }
+    // }
+
+
+    // // Test longestSpan() and shortestSpan() #1
+    // {
+    //     // Create Span
+    //     Span sp = Span(5);
+    //     sp.addNumber(0);
+    //     sp.addNumber(42);
+    //     sp.addNumber(142);
+    //     sp.addNumber(242);
+    //     sp.addNumber(4242);
+
+    //     // Test longestSpan()
+    //     std::cout << "Longest span: " << sp.longestSpan() << std::endl;
+
+    //     // Test shortestSpan()
+    //     std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
+    // }
+
+
+    // // Test longestSpan() and shortestSpan() #2
+    // {
+    //     // Create Span
+    //     Span sp = Span(15000);
+    //     for (size_t i = 0; i < 15000; i++)
+    //         sp.addNumber(i);
+
+    //     // Test longestSpan()
+    //     std::cout << "Longest span: " << sp.longestSpan() << std::endl;
+
+    //     // Test shortestSpan()
+    //     std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
+    // }
+
+
+    // // Test longestSpan() and shortestSpan() #3
+    // {
+    //     // Create Span
+    //     Span sp = Span(15);
+    //     sp.addNumber(5431);
+    //     sp.addNumber(11);
+    //     sp.addNumber(14351);
+    //     sp.addNumber(0);
+    //     sp.addNumber(-134);
+
+    //     // Test longestSpan()
+    //     std::cout << "Longest span: " << sp.longestSpan() << std::endl;
+
+    //     // Test shortestSpan()
+    //     std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
+    // }
+
+
+    // // Test longestSpan() and shortestSpan() #4
+    // {
+    //     // Create Span
+    //     Span sp = Span(2);
+    //     sp.addNumber(5431);
+    //     sp.addNumber(11);
+
+    //     // Test longestSpan()
+    //     std::cout << "Longest span: " << sp.longestSpan() << std::endl;
+
+    //     // Test shortestSpan()
+    //     std::cout << "Shortest span: " << sp.shortestSpan() << std::endl;
+    // }
+
+
+    // // Test addNumbers
+    // {
+    //     int size_span = 8;
+    //     // Create Span
+    //     Span sp = Span(size_span);
+    //     sp.addNumber(0);
+    //     sp.addNumber(42);
+    //     sp.addNumber(142);
+    //     sp.addNumber(242);
+    //     sp.addNumber(4242);
+
+    //     // Create vector
+    //     std::vector<int> vector;
+    //     vector.push_back(21);
+    //     vector.push_back(2121);
+    //     vector.push_back(4221);
+
+    //     // addNumbers
+    //     sp.addNumbers(vector.begin(), vector.end());
+    //     for (size_t i = 0; i < sp.getSize(); i++)
+    //         std::cout << sp[i] << std::endl;
+    // }
+
+
+    // // Test addNumbers with exception
+    // {
+    //     int size_span = 15;
+    //     // Create Span
+    //     Span sp = Span(size_span);
+    //     sp.addNumber(0);
+    //     sp.addNumber(42);
+    //     sp.addNumber(142);
+    //     sp.addNumber(242);
+    //     sp.addNumber(4242);
+
+    //     // Create vector
+    //     std::vector<int> vector;
+    //     vector.push_back(21);
+    //     vector.push_back(2121);
+    //     vector.push_back(4221);
+
+    //     // addNumbers
+    //     sp.addNumbers(vector.begin(), vector.end());
+    //     try {
+    //         for (size_t i = 0; i < sp.getSize(); i++)
+    //             std::cout << sp[i] << std::endl;
+    //     } catch (std::exception &ex) {
+    //         std::cout << "❌Error exception: " << ex.what() << std::endl;
+    //     }
+    // }
+
     return 0;
 }

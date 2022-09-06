@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 
+#include "NotFoundEl.hpp"
 #include "easyfind.hpp"
 
 #endif

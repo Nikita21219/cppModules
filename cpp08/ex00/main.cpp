@@ -7,7 +7,7 @@ int main() {
     container.push_back(53);
     container.push_back(59);
     container.push_back(999);
-    
+
     try {
         std::cout << easyfind(container, 42) << std::endl;
     } catch(const std::exception& e) {

@@ -1,4 +1,4 @@
-NAME = account
+NAME = abomination
 CC = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
@@ -15,7 +15,7 @@ all:	$(NAME)
 $(OBJDIR)/%.o :	%.cpp $^
 	@$(CC) $(CPPFLAGS) -c $< -o $@
 
-$(NAME):	Makefile $(OBJDIR) $(OBJ) Account.tpp
+$(NAME):	Makefile $(OBJDIR) $(OBJ) MutantStack.tpp abomination.h MutantStack.hpp
 	@$(CC) $(CPPFLAGS) -o $(NAME) $(OBJ) 
 	@echo "$(NAME) compile"
 

@@ -24,13 +24,10 @@ int Span::shortestSpan() {
     int shortest_span = longestSpan();
 
     checkSize();
-    for (size_t i = 0; i < array.size(); i++) {
-        for (size_t j = 0; j < array.size(); j++) {
-            if (j == i)
-                continue;
-            tmp_span = abs(array.at(i) - array.at(j));
-            if (tmp_span < shortest_span || (i == 0 && j == 0))
-                shortest_span = tmp_span;
+    for (size_t i = 0; i < array.size() - 1; i++) {
+        tmp_span = abs(array.at(i) - array.at(i + 1));
+        if (tmp_span < shortest_span) {
+            shortest_span = tmp_span;
             if (shortest_span == 0)
                 return 0;
         }

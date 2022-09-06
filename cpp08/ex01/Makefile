@@ -15,7 +15,7 @@ all:	$(NAME)
 $(OBJDIR)/%.o :	%.cpp $^
 	@$(CC) $(CPPFLAGS) -c $< -o $@
 
-$(NAME):	Makefile $(OBJDIR) $(OBJ) 
+$(NAME):	Makefile $(OBJDIR) $(OBJ) span.h Span.hpp
 	@$(CC) $(CPPFLAGS) -o $(NAME) $(OBJ) 
 	@echo "$(NAME) compile"
 

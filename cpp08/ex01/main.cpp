@@ -71,8 +71,8 @@ int main() {
     // // Test longestSpan() and shortestSpan() #2
     // {
     //     // Create Span
-    //     Span sp = Span(15000);
-    //     for (size_t i = 0; i < 15000; i++)
+    //     Span sp = Span(50100);
+    //     for (size_t i = 0; i <= 50000; i++)
     //         sp.addNumber(i);
 
     //     // Test longestSpan()
